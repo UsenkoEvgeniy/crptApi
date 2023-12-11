@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CrptApi {
     public static final String BASE_API_URL = "https://ismp.crpt.ru/api/v3";
-    public static final String CREATE_RU_URL = "/lk/documents/send";
+    public static final String CREATE_RU_URL = "/lk/documents/create";
     private final TimeUnit timeUnit;
     private long timeDelay = 1L;
     private final ScheduledExecutorService executorService;
@@ -118,7 +118,7 @@ class DocumentDto {
     @JsonProperty("producer_inn")
     private String producerInn;
     @JsonProperty("production_date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDateTime productionDate;
     @JsonProperty("production_type")
     private String productionType;
@@ -140,7 +140,7 @@ class ProductDto {
     @JsonProperty("certificate_document")
     private String certificateDocument;
     @JsonProperty("certificate_document_date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDateTime certificateDocumentDate;
     @JsonProperty("certificate_document_number")
     private String certificateDocumentNumber;
@@ -149,7 +149,7 @@ class ProductDto {
     @JsonProperty("producer_inn")
     private String producerInn;
     @JsonProperty("production_date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private LocalDateTime productionDate;
     @JsonProperty("tnved_code")
